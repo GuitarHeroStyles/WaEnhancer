@@ -25,7 +25,6 @@ import com.wmods.wppenhacer.xposed.downgrade.Patch
 @YukiHookLibXposedEntry(
     minApiVersion = 101,
     targetApiVersion = 102,
-    staticScope = true,
     scope = ["com.whatsapp", "com.whatsapp.w4b", "system"],
     hotReload = YukiHookLibXposedEntry.HotReload.NONE
 )
