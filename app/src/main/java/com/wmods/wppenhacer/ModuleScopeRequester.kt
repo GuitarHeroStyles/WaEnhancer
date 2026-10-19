@@ -29,8 +29,8 @@ object ModuleScopeRequester {
             val scope = YukiHook.Module.scope
             if (!scope.isAvailable) return
 
-            val wanted = listOf(SYSTEM, FeatureLoader.PACKAGE_WPP, FeatureLoader.PACKAGE_BUSINESS, context.packageName)
-                .filter { it == SYSTEM || it == context.packageName || context.isInstalled(it) }
+            val wanted = listOf(SYSTEM, FeatureLoader.PACKAGE_WPP, FeatureLoader.PACKAGE_BUSINESS)
+                .filter { it == SYSTEM || context.isInstalled(it) }
             val missing = wanted - scope.packages.toSet()
             if (missing.isEmpty()) return
 
