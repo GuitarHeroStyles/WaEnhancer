@@ -26,7 +26,7 @@ object ModuleScopeRequester {
 
     private fun request(context: Context) {
         runCatching {
-            val scope = YukiHook.Status.Module.scope
+            val scope = YukiHook.Module.scope
             if (!scope.isAvailable) return
 
             val wanted = listOf(SYSTEM, FeatureLoader.PACKAGE_WPP, FeatureLoader.PACKAGE_BUSINESS, context.packageName)
