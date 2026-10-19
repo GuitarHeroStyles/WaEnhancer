@@ -10,6 +10,7 @@ import java.io.IOException
 object AntiUpdater : YukiBaseHooker() {
     override fun onHook() {
         if (packageName == "android" || packageName == "system") return
+        if (packageName.startsWith("com.wmods.wppenhacer")) return
         PackageInstaller::class.resolve().method {
             name = "createSession"
         }.hookAll {
