@@ -40,6 +40,7 @@ class App : ModuleApplication() {
             sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
             sharedPreferences.registerOnSharedPreferenceChangeListener(prefsChangeListener)
             RemotePreferencesSync(this).start()
+            ModuleScopeRequester.start(this)
             val mode = sharedPreferences.getString("thememode", "0")!!.toInt()
             setThemeMode(mode)
             changeLanguage(this)
